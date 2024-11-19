@@ -1,0 +1,21 @@
+{% extends 'inventory_app/layout.html' %}
+
+{% block title%} Home {% endblock %}
+
+
+{% block content %}
+
+<div class="m-3 p-5 bg-secondary text-white text-center" style="--bs-bg-opacity: .4;">
+    <h1 class="display-4">
+        Welcome to my Lovely Inventory Management System
+    </h1>
+    <p class="lead">
+        Manage your items effectively and efficiently
+    </p>
+
+    <hr class="my-4">
+    <p>Use the Nav bar above to add, view, update or delete an item or items</p>
+    <a href="{% url 'product_list' %}" class="btn btn-primary btn-lg" role="button">View Items</a>
+</div>
+
+{% endblock %}

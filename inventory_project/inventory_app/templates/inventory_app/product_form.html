@@ -1,0 +1,17 @@
+{% extends 'inventory_app/layout.html' %}
+
+{% block title%} Home {% endblock %}
+
+
+{% block content %}
+
+<h1 class="text-center">Product Form</h1>
+
+<form action="" method="POST" class="m-3 p-5 bg-secondary text-white" style="--bs-bg-opacity: .4;">
+    {% csrf_token%}
+    {{form}}
+    <button type="submit" class="btn btn-primary btn-block mt-3 w-100"> Save Item</button>
+</form>
+
+
+{% endblock %}

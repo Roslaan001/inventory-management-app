@@ -1,0 +1,42 @@
+{% extends 'inventory_app/layout.html' %}
+
+{% block title%} Product List {% endblock %}
+
+
+{% block content %}
+
+<h1 class="text-center">   Products</h1>
+<table class="table table-bordered border-primary table-striped text-center">
+    <thead class="table-dark">
+    <tr>
+        <th>Item ID</th>
+        <th>Name</th>
+        <th>SKU</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Supplier</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for item in items %}
+    <tr>
+        <td>{{item.item_id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.sku}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.supplier}}</td>
+        <td>
+            <a href="{% url 'product_update' item.item_id%}" class="btn btn-warning">Update</a>
+            <a href="{% url 'product_delete' item.item_id%}" class="btn btn-danger">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+
+
+{% endblock %}
